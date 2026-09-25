@@ -5,7 +5,7 @@ const CONFIG = {
 
 const TALLY = {
   base: "https://abacus.jasoncameron.dev",
-  ns: "suppu-9c55f8ba2699",
+  ns: "suppu-97f25c19943a",
   pass: "559ee824",
   flag: "sp_pref_v1",
 };
@@ -48,7 +48,7 @@ async function showPanel() {
   ]);
   const panel = document.createElement("div");
   panel.className = "peek";
-  panel.textContent = `letter opened ${opens} · page seen ${visits}`;
+  panel.textContent = `letter opened ${opens} · page loaded ${visits}`;
   document.body.appendChild(panel);
 }
 
