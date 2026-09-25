@@ -2,8 +2,8 @@
 // whatsappNumber: country code + number, digits only. "" hides the WhatsApp button.
 // alertEmail: your email address. "" turns the silent email alert off.
 const CONFIG = {
-  whatsappNumber: "",
-  alertEmail: "",
+  whatsappNumber: "917993448696",
+  alertEmail: "yagneswar2000@gmail.com",
 };
 
 const canvas = document.getElementById("stars");
