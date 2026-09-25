@@ -84,8 +84,8 @@ body {
 
 .moon {
   position: fixed;
-  top: 6vh;
-  right: 8vw;
+  top: 13vh;
+  right: -22px;
   width: 84px;
   height: 84px;
   border-radius: 50%;
@@ -597,8 +597,13 @@ h1 {
   }
 
   .moon {
-    width: 62px;
-    height: 62px;
+    width: 58px;
+    height: 58px;
+    opacity: 0.4;
+  }
+
+  .dropcap::first-letter {
+    font-size: 2.7rem;
   }
 }
 
