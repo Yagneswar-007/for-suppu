@@ -480,6 +480,21 @@ h1 {
   padding: 10px 18px;
 }
 
+.peek {
+  position: fixed;
+  right: 12px;
+  bottom: 12px;
+  z-index: 9;
+  background: rgba(2, 8, 23, 0.82);
+  border: 1px solid rgba(147, 197, 253, 0.3);
+  border-radius: 12px;
+  padding: 8px 12px;
+  font-size: 0.76rem;
+  letter-spacing: 0.04em;
+  color: #cfe6ff;
+  backdrop-filter: blur(6px);
+}
+
 .heart {
   position: fixed;
   z-index: 6;

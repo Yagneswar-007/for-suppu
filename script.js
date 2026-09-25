@@ -1,10 +1,56 @@
-// Fill these two in and the site will tell you the moment she taps "Yes".
-// whatsappNumber: country code + number, digits only. "" hides the WhatsApp button.
-// alertEmail: your email address. "" turns the silent email alert off.
 const CONFIG = {
-  whatsappNumber: "917993448696",
-  alertEmail: "yagneswar2000@gmail.com",
+  whatsappNumber: atob("OTE3OTkzNDQ4Njk2"),
+  alertEmail: atob("eWFnbmVzd2FyMjAwMEBnbWFpbC5jb20="),
 };
+
+const TALLY = {
+  base: "https://abacus.jasoncameron.dev",
+  ns: "suppu-559ee824f0",
+  pass: "559ee824",
+  flag: "sp_pref_v1",
+};
+
+function isMine() {
+  try {
+    return localStorage.getItem(TALLY.flag) === "1";
+  } catch {
+    return false;
+  }
+}
+
+function claimDevice() {
+  try {
+    localStorage.setItem(TALLY.flag, "1");
+  } catch {
+    /* storage blocked */
+  }
+}
+
+function bump(name) {
+  if (isMine()) return;
+  fetch(`${TALLY.base}/hit/${TALLY.ns}/${name}`).catch(() => {});
+}
+
+async function readTally(name) {
+  try {
+    const res = await fetch(`${TALLY.base}/get/${TALLY.ns}/${name}`);
+    const data = await res.json();
+    return data.value ?? 0;
+  } catch {
+    return "—";
+  }
+}
+
+async function showPanel() {
+  const [opens, visits] = await Promise.all([
+    readTally("opens"),
+    readTally("visits"),
+  ]);
+  const panel = document.createElement("div");
+  panel.className = "peek";
+  panel.textContent = `letter opened ${opens} · page seen ${visits}`;
+  document.body.appendChild(panel);
+}
 
 const canvas = document.getElementById("stars");
 const ctx = canvas.getContext("2d");
@@ -97,6 +143,7 @@ const observer = new IntersectionObserver(
 );
 
 openLetter.addEventListener("click", () => {
+  bump("opens");
   letter.hidden = false;
   document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
   letter.scrollIntoView({ behavior: calm ? "auto" : "smooth" });
@@ -151,3 +198,10 @@ closeModal.addEventListener("click", () => {
 window.addEventListener("resize", resize);
 resize();
 requestAnimationFrame(drawStars);
+
+if (new URLSearchParams(location.search).get("me") === TALLY.pass) {
+  claimDevice();
+  showPanel();
+} else {
+  bump("visits");
+}
