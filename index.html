@@ -4,10 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>For Suppuuuuu ✨</title>
+    <meta name="theme-color" content="#03122a" />
+    <meta property="og:title" content="For Suppuuuuu ✨" />
+    <meta
+      property="og:description"
+      content="A little universe, and one question at the end of it."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Great+Vibes&family=Nunito:wght@400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Great+Vibes&family=Nunito:wght@400;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -17,6 +23,7 @@
     <div class="glow glow-a" aria-hidden="true"></div>
     <div class="glow glow-b" aria-hidden="true"></div>
     <div class="glow glow-c" aria-hidden="true"></div>
+    <div class="moon" aria-hidden="true"></div>
 
     <main>
       <section class="hero" id="top">
@@ -31,14 +38,14 @@
           Open the letter
         </button>
         <p class="hint">tap the envelope, then scroll slowly</p>
+        <div class="scroll-cue" aria-hidden="true"><span></span></div>
       </section>
 
       <section class="letter" id="letter" hidden>
-        <article class="paper">
+        <article class="paper reveal">
           <p class="from">for you, always</p>
           <h2>The cosmic timing theory</h2>
-
-          <p>
+          <p class="dropcap">
             Suppuuuuu, do you know the cosmic timing theory? It says that no
             matter how close two people are, they will not be intertwined into
             each other’s lives until the timing is too perfect to be true. The
@@ -55,11 +62,20 @@
             so I am willing to take the risk of pursuing you, no matter what,
             and no matter how far you might be.
           </p>
-          <p class="soft">
-            Show me your scars and your vulnerabilities, so I know where to love
-            you the most. Even if there is a 1% chance of me ending up with you,
-            I would never give up.
-          </p>
+        </article>
+
+        <div class="divider reveal" aria-hidden="true">
+          <i></i><span>✦</span><i></i>
+        </div>
+
+        <blockquote class="quote reveal">
+          Show me your scars and your vulnerabilities, so I know where to love
+          you the most. Even if there is a 1% chance of me ending up with you, I
+          would never give up.
+        </blockquote>
+
+        <article class="paper reveal">
+          <h2>Why I am telling you now</h2>
           <p>
             I wished to tell you all this when I met you, but there is this
             constant fear of missing you that has been eating me alive. I don’t
@@ -67,7 +83,6 @@
             marriage proposal — and the thought of losing you is so terrifying.
             So I am telling you this now, instead of waiting until we meet.
           </p>
-
           <p class="telugu">
             Naa intii Mahalakshmi avutha… eyy kastam rakunda chuskunta.
           </p>
@@ -79,11 +94,18 @@
             know this might all feel cringe to you — but I yearn this much for
             you.
           </p>
+        </article>
+
+        <div class="divider reveal" aria-hidden="true">
+          <i></i><span>✦</span><i></i>
+        </div>
+
+        <article class="paper reveal">
+          <h2>Through my eyes</h2>
           <p>
             You should hear me speak about your eyes, your hair, you in a saree,
             your literal existence… with my friends, and how beautiful one
-            person can be. You just need to see yourself with my eyes
-            <span class="emoji">👀</span>
+            person can be. You just need to see yourself with my eyes 👀
           </p>
           <p class="italic-line">Ohh, to be your man… 🤌</p>
           <p>
@@ -91,6 +113,10 @@
             the nicknames change continuously with me 😇 — but the emotions stay
             the same.
           </p>
+        </article>
+
+        <article class="paper reveal">
+          <h2>The way I would love you</h2>
           <p>
             I would love you how you wanted to be loved. I would ask, and then
             love you in the way you wanted. I would put my phone down when you
@@ -102,11 +128,15 @@
             remember the very little things about you, and how you feel about
             them.
           </p>
-          <p class="soft">
-            I will always take the roadside when we walk together. Let the world
-            rush by on my left, as long as I have my whole world walking safely
-            on my right.
-          </p>
+        </article>
+
+        <blockquote class="quote reveal">
+          I will always take the roadside when we walk together. Let the world
+          rush by on my left, as long as I have my whole world walking safely on
+          my right.
+        </blockquote>
+
+        <article class="paper closing-paper reveal">
           <p class="closing">
             I wanted to be your boyfriend and your husband — rather than you
             being my girlfriend and my wife. I wanna be yours, rather than I
@@ -114,29 +144,22 @@
           </p>
         </article>
 
+        <p class="promises-title reveal">little forevers I am promising you</p>
         <ul class="promises">
-          <li>
-            <span>☕</span>
-            morning coffee, shared
-          </li>
-          <li>
-            <span>📺</span>
-            shows, together
-          </li>
-          <li>
-            <span>🌙</span>
-            dates I would plan for you
-          </li>
-          <li>
-            <span>🤲</span>
-            your hand, crossing every road
-          </li>
+          <li class="reveal"><span>☕</span>morning coffee, shared</li>
+          <li class="reveal"><span>📺</span>shows, together</li>
+          <li class="reveal"><span>🌙</span>dates I would plan for you</li>
+          <li class="reveal"><span>🍲</span>dinners I would cook for you</li>
+          <li class="reveal"><span>🤲</span>your hand, crossing every road</li>
+          <li class="reveal"><span>🙏</span>you, in every prayer of mine</li>
         </ul>
 
-        <section class="finale">
+        <section class="finale reveal">
           <p class="finale-kicker">one question, one chance</p>
           <h2>Suppuuuuu… will you give me one chance?</h2>
-          <button class="yes-btn" id="yesBtn" type="button">Yes, I’ll give you a chance 🤍</button>
+          <button class="yes-btn" id="yesBtn" type="button">
+            Yes, I’ll give you a chance 🤍
+          </button>
           <p class="tiny">no pressure on the button. only on my heart.</p>
         </section>
       </section>
@@ -150,6 +173,9 @@
           Thank you for reading. I’ll keep you in my prayers, in every 11:11,
           and in every nickname I invent for you.
         </p>
+        <a class="wa-btn" id="waBtn" href="#" target="_blank" rel="noopener" hidden>
+          Tell him yourself 💌
+        </a>
         <button type="button" id="closeModal">Close with a smile</button>
       </div>
     </div>
