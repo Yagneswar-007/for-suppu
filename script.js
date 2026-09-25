@@ -5,7 +5,7 @@ const CONFIG = {
 
 const TALLY = {
   base: "https://abacus.jasoncameron.dev",
-  ns: "suppu-559ee824f0",
+  ns: "suppu-9c55f8ba2699",
   pass: "559ee824",
   flag: "sp_pref_v1",
 };
