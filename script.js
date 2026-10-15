@@ -195,6 +195,48 @@ closeModal.addEventListener("click", () => {
   modal.hidden = true;
 });
 
+const songs = document.querySelectorAll(".memory-song");
+songs.forEach((song) => {
+  song.addEventListener("play", () => {
+    songs.forEach((other) => {
+      if (other !== song) other.pause();
+    });
+  });
+});
+
+const drifters = document.querySelectorAll("[data-drift]");
+let driftQueued = false;
+
+const wide = window.matchMedia("(min-width: 1200px)");
+
+function drift() {
+  driftQueued = false;
+  const mid = window.innerHeight / 2;
+  drifters.forEach((el) => {
+    if (!wide.matches) {
+      el.style.transform = "";
+      return;
+    }
+    const box = el.parentElement.parentElement.getBoundingClientRect();
+    const offset = (box.top + box.height / 2 - mid) * -0.18;
+    el.style.transform = `translateY(${Math.max(-90, Math.min(90, offset))}px)`;
+  });
+}
+
+if (!calm && drifters.length) {
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (driftQueued) return;
+      driftQueued = true;
+      requestAnimationFrame(drift);
+    },
+    { passive: true }
+  );
+  window.addEventListener("resize", drift);
+  drift();
+}
+
 window.addEventListener("resize", resize);
 resize();
 requestAnimationFrame(drawStars);
